@@ -20,6 +20,10 @@
 		3CF847A51E48CB0F006955F8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
 		3CF847A81E48CC03006955F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847A71E48CC03006955F8 /* Coordinator.swift */; };
 		3CF847AB1E48CCA5006955F8 /* Apperance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AA1E48CCA5006955F8 /* Apperance.swift */; };
+		3CF847AE1E48D234006955F8 /* AccountsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AD1E48D234006955F8 /* AccountsCoordinator.swift */; };
+		3CF847B01E48D328006955F8 /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AF1E48D328006955F8 /* AccountListViewController.swift */; };
+		3CF847B41E48D4A0006955F8 /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847B31E48D4A0006955F8 /* AccountListViewModel.swift */; };
+		3CF847B61E48D4FA006955F8 /* BaseBoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847B51E48D4FA006955F8 /* BaseBoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		3CF847A01E48CB0F006955F8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		3CF847A71E48CC03006955F8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3CF847AA1E48CCA5006955F8 /* Apperance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apperance.swift; sourceTree = "<group>"; };
+		3CF847AD1E48D234006955F8 /* AccountsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsCoordinator.swift; sourceTree = "<group>"; };
+		3CF847AF1E48D328006955F8 /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
+		3CF847B31E48D4A0006955F8 /* AccountListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
+		3CF847B51E48D4FA006955F8 /* BaseBoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,7 @@
 		3CF847961E48CA72006955F8 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				3CF847AC1E48CEE0006955F8 /* Main */,
 				3CF847971E48CA7B006955F8 /* App */,
 				3CF847A71E48CC03006955F8 /* Coordinator.swift */,
 			);
@@ -172,6 +181,8 @@
 		3CF8479A1E48CAC1006955F8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3CF847B51E48D4FA006955F8 /* BaseBoundViewController.swift */,
+				3CF847B11E48D477006955F8 /* Account List */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +205,31 @@
 				3CF847AA1E48CCA5006955F8 /* Apperance.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		3CF847AC1E48CEE0006955F8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3CF847AD1E48D234006955F8 /* AccountsCoordinator.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		3CF847B11E48D477006955F8 /* Account List */ = {
+			isa = PBXGroup;
+			children = (
+				3CF847B21E48D491006955F8 /* VMs */,
+				3CF847AF1E48D328006955F8 /* AccountListViewController.swift */,
+			);
+			name = "Account List";
+			sourceTree = "<group>";
+		};
+		3CF847B21E48D491006955F8 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+				3CF847B31E48D4A0006955F8 /* AccountListViewModel.swift */,
+			);
+			name = VMs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,10 +391,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF847B41E48D4A0006955F8 /* AccountListViewModel.swift in Sources */,
 				3CF847991E48CA88006955F8 /* AppCoordinator.swift in Sources */,
+				3CF847B61E48D4FA006955F8 /* BaseBoundViewController.swift in Sources */,
 				3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */,
+				3CF847B01E48D328006955F8 /* AccountListViewController.swift in Sources */,
 				3CF847A81E48CC03006955F8 /* Coordinator.swift in Sources */,
 				3CF847AB1E48CCA5006955F8 /* Apperance.swift in Sources */,
+				3CF847AE1E48D234006955F8 /* AccountsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +649,7 @@
 				3CF8478E1E48C91D006955F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CF8478F1E48C91D006955F8 /* Build configuration list for PBXNativeTarget "BankierenTests" */ = {
 			isa = XCConfigurationList;
@@ -617,6 +658,7 @@
 				3CF847911E48C91D006955F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CF847921E48C91D006955F8 /* Build configuration list for PBXNativeTarget "BankierenUITests" */ = {
 			isa = XCConfigurationList;
@@ -625,6 +667,7 @@
 				3CF847941E48C91D006955F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
