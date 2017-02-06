@@ -1,15 +1,15 @@
 //
-//  ModelTests.swift
-//  ModelTests
+//  AccountTests.swift
+//  Bankieren
 //
 //  Created by Ian Dundas on 06/02/2017.
 //  Copyright © 2017 Ian Dundas. All rights reserved.
 //
 
 import XCTest
-@testable import Model
+import Nimble
 
-class ModelTests: XCTestCase {
+class AccountTests: RealmTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,7 @@ class ModelTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testOkay(){
+        expect(true).to(beTrue())
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
