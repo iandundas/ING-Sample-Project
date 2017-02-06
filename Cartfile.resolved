@@ -1,4 +1,5 @@
 github "wokalski/Diff.swift" "0.5.1"
+github "quick/Nimble" "v6.0.1"
 github "ReactiveKit/ReactiveKit" "v3.3.0"
 github "realm/realm-cocoa" "v2.4.2"
 github "ReactiveKit/Bond" "6.0.0"
