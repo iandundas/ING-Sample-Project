@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Model.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>3CF847821E48C91D006955F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3CF847BC1E48D800006955F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3CF847C41E48D800006955F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
