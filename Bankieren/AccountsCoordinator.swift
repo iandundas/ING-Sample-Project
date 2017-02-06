@@ -8,6 +8,8 @@
 
 import UIKit
 import ReactiveKit
+import RealmSwift
+import Model
 
 class AccountsCoordinator: NSObject, Coordinator{
     
@@ -26,16 +28,16 @@ class AccountsCoordinator: NSObject, Coordinator{
 
     /// Tells the coordinator to create its initial view controller and take over the user flow.
     func start(withCallback completion: CoordinatorCallback?) {
+
+        let realm = try! Realm()
         
-        let selectPlayer = SelectPlayerViewController.create { (viewController) -> SelectPlayerViewModel<RealPlayer> in
-            viewController.actions.tappedScores.bind(to: self.requestedToViewHighScores)
-            
-            let viewModel = SelectPlayerViewModel(actions: viewController.actions, players: self.demoPlayers)
-            viewModel.didChoosePlayers.bind(to: self.playersWishingToPlayGame)
+        let accountsList = AccountListViewController.create { (viewController) -> AccountListViewModelType in
+            let viewModel = AccountListViewModel()
+            //
             return viewModel
         }
         
-        presenter.viewControllers = [selectPlayer]
+        presenter.viewControllers = [accountsList]
     }
     
     

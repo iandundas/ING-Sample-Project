@@ -31,6 +31,13 @@ class AppCoordinator: NSObject, Coordinator{
         Style.applyGlobal()
         
         preloadData()
+        
+        DispatchQueue.main.async {
+            let mainFlow = AccountsCoordinator(presenter: self.presenter)
+            _ = self.startChild(coordinator: mainFlow) { (mainFlow) in
+                //
+            }
+        }
     }
     
     /// Tells the coordinator that it is done and that it should rewind the view controller state to where it was before `start` was called.
