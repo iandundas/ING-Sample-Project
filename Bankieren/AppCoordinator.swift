@@ -25,7 +25,8 @@ class AppCoordinator: NSObject, Coordinator{
     func start(withCallback completion: CoordinatorCallback?) {
         window.rootViewController = presenter
         window.makeKeyAndVisible()
-    
+        
+        Style.applyGlobal()
     }
     
     /// Tells the coordinator that it is done and that it should rewind the view controller state to where it was before `start` was called.

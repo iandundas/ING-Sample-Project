@@ -19,6 +19,7 @@
 		3CF847A41E48CB0F006955F8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
 		3CF847A51E48CB0F006955F8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
 		3CF847A81E48CC03006955F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847A71E48CC03006955F8 /* Coordinator.swift */; };
+		3CF847AB1E48CCA5006955F8 /* Apperance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AA1E48CCA5006955F8 /* Apperance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		3CF8479F1E48CB0F006955F8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		3CF847A01E48CB0F006955F8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		3CF847A71E48CC03006955F8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3CF847AA1E48CCA5006955F8 /* Apperance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apperance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		3CF847661E48C91D006955F8 /* Bankieren */ = {
 			isa = PBXGroup;
 			children = (
+				3CF847A91E48CC99006955F8 /* UI */,
 				3CF8479A1E48CAC1006955F8 /* ViewControllers */,
 				3CF847961E48CA72006955F8 /* Coordinators */,
 				3CF847951E48CA56006955F8 /* Extras */,
@@ -183,6 +186,14 @@
 				3CF847A01E48CB0F006955F8 /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CF847A91E48CC99006955F8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3CF847AA1E48CCA5006955F8 /* Apperance.swift */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +358,7 @@
 				3CF847991E48CA88006955F8 /* AppCoordinator.swift in Sources */,
 				3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */,
 				3CF847A81E48CC03006955F8 /* Coordinator.swift in Sources */,
+				3CF847AB1E48CCA5006955F8 /* Apperance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
