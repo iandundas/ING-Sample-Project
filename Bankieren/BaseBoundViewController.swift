@@ -62,7 +62,7 @@ public class BaseBoundViewController<VM>: UIViewController {
         bindTo(viewModel: viewModel)
     }
     
-    public func bindTo(viewModel: VM) {}
+    internal func bindTo(viewModel: VM) {}
 }   
 
 public func downcast<T, U, D>(closure: @escaping (T) -> D) -> ((U) -> D) {
