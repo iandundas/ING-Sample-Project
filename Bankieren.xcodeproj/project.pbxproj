@@ -34,6 +34,12 @@
 		3C37A7821E4A02FD00724DD0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A74C1E49F50800724DD0 /* ListViewController.swift */; };
 		3C37A7831E4A02FD00724DD0 /* BaseBoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847B51E48D4FA006955F8 /* BaseBoundViewController.swift */; };
 		3C37A7851E4A046000724DD0 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7841E4A046000724DD0 /* Bundle.swift */; };
+		3C37A7861E4A0C4500724DD0 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479C1E48CB0F006955F8 /* Bond.framework */; };
+		3C37A7871E4A0C4500724DD0 /* Diff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479D1E48CB0F006955F8 /* Diff.framework */; };
+		3C37A7881E4A0C4500724DD0 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479E1E48CB0F006955F8 /* ReactiveKit.framework */; };
+		3C37A7891E4A0C4500724DD0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
+		3C37A78A1E4A0C4500724DD0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
+		3C37A78C1E4A0F4A00724DD0 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A78B1E4A0F4A00724DD0 /* Realm.swift */; };
 		3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847671E48C91D006955F8 /* AppDelegate.swift */; };
 		3CF8476F1E48C91D006955F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8476E1E48C91D006955F8 /* Assets.xcassets */; };
 		3CF847721E48C91D006955F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */; };
@@ -184,6 +190,7 @@
 		3C37A7621E4A026300724DD0 /* UserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceTests.swift; sourceTree = "<group>"; };
 		3C37A7641E4A026300724DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C37A7841E4A046000724DD0 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		3C37A78B1E4A0F4A00724DD0 /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		3C37A78D1E4A104600724DD0 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
 		3C37A78E1E4A106400724DD0 /* Bankieren.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bankieren.entitlements; sourceTree = "<group>"; };
 		3CF847641E48C91D006955F8 /* Bankieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,7 +228,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C37A7881E4A0C4500724DD0 /* ReactiveKit.framework in Frameworks */,
 				3C37A7371E49E75000724DD0 /* NotificationCenter.framework in Frameworks */,
+				3C37A78A1E4A0C4500724DD0 /* RealmSwift.framework in Frameworks */,
+				3C37A7871E4A0C4500724DD0 /* Diff.framework in Frameworks */,
+				3C37A7861E4A0C4500724DD0 /* Bond.framework in Frameworks */,
+				3C37A7891E4A0C4500724DD0 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +495,7 @@
 				3CF847E31E48D951006955F8 /* Classes */,
 				3CF847DB1E48D80D006955F8 /* Supporting */,
 				3CF847CB1E48D800006955F8 /* Tests */,
+				3C37A78B1E4A0F4A00724DD0 /* Realm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -864,6 +877,7 @@
 				3C37A7281E49027B00724DD0 /* Currency.swift in Sources */,
 				3CF847E51E48D962006955F8 /* Account.swift in Sources */,
 				3C37A72E1E4929CE00724DD0 /* PrimaryKey.swift in Sources */,
+				3C37A78C1E4A0F4A00724DD0 /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,6 +965,10 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iandundas.Bankieren.TodayWidget;
@@ -965,6 +983,10 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iandundas.Bankieren.TodayWidget;
