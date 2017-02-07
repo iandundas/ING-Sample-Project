@@ -26,7 +26,7 @@ import UIKit
 
 public class BaseBoundViewController<VM>: UIViewController {
     
-    internal var viewModel: VM{
+    public var viewModel: VM{
         if let viewModel = _viewModel {
             return viewModel as! VM
         } else {
