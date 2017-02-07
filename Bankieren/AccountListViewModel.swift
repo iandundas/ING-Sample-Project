@@ -12,11 +12,11 @@ import Bond
 import RealmSwift
 import Model
 
-enum AccountListSection{
+public enum AccountListSection{
     case paymentAccounts
     case savingAccounts
     
-    var title: String {
+    public var title: String {
         switch self {
         case .paymentAccounts: return "Payments"
         case .savingAccounts: return "Savings"
@@ -24,22 +24,22 @@ enum AccountListSection{
     }
 }
 
-protocol AccountListCoordinatorHandle{
+public protocol AccountListCoordinatorHandle{
     func section(index:Int) -> AccountListSection
     
     func paymentCellData(index: Int) -> PaymentCellViewModel
     func savingCellData(index: Int) -> SavingCellViewModel
 }
 
-class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
+public class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
     
-    var listDidUpdate: Signal<Void, NoError>{
+    public var listDidUpdate: Signal<Void, NoError>{
         return accountsUpdated.map {_ in }
     }
     
-    let accountsUpdated = SafePublishSubject<AccountListSection>()
+    fileprivate let accountsUpdated = SafePublishSubject<AccountListSection>()
     
-    var paymentAccounts: Results<PaymentAccount> {
+    fileprivate var paymentAccounts: Results<PaymentAccount> {
         didSet{
             // TODO with more time it would be good to use the diff available in RealmCollectionChange<Results<PaymentAccount>>
             // in order to provide CRUD notifications to the TableView:
@@ -52,7 +52,7 @@ class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
     
     
     
-    var savingAccounts: Results<SavingAccount> {
+    fileprivate var savingAccounts: Results<SavingAccount> {
         didSet{
             // TODO with more time it would be good to use the diff available in RealmCollectionChange<Results<PaymentAccount>>
             // in order to provide CRUD notifications to the TableView:
@@ -64,7 +64,7 @@ class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
     private var savingUpdatesToken: NotificationToken? = nil
     
     private let bag = DisposeBag()
-    init(actions: AccountsViewController.Actions){
+    public init(actions: AccountsViewController.Actions){
         
         let realm = try! Realm()
         
@@ -96,25 +96,25 @@ class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
             }.dispose(in: bag)
     }
     
-    func sectionCount() -> Int {
+    public func sectionCount() -> Int {
         return 2
     }
     
-    func itemCount(section index: Int) -> Int {
+    public func itemCount(section index: Int) -> Int {
         switch section(index: index){
         case .paymentAccounts: return paymentAccounts.count
         case .savingAccounts: return savingAccounts.count
         }
     }
     
-    func title(section index: Int) -> String?{
+    public func title(section index: Int) -> String?{
         return section(index: index).title
     }
     
     
     // MARK: AccountListCoordinatorHandle
     
-    func section(index:Int) -> AccountListSection{
+    public func section(index:Int) -> AccountListSection{
         switch index{
         case 0: return .paymentAccounts
         case 1: return .savingAccounts
@@ -122,18 +122,18 @@ class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
         }
     }
     
-    func paymentCellData(index: Int) -> PaymentCellViewModel{
+    public func paymentCellData(index: Int) -> PaymentCellViewModel{
         return paymentAccounts[index].cellViewModel()
     }
     
-    func savingCellData(index: Int) -> SavingCellViewModel{
+    public func savingCellData(index: Int) -> SavingCellViewModel{
         return savingAccounts[index].cellViewModel()
     }
 }
 
 
-extension PaymentAccount{
-    func cellViewModel() -> PaymentCellViewModel{
+public extension PaymentAccount{
+    public func cellViewModel() -> PaymentCellViewModel{
         
         let formattedBalance = currency.formatted(amount: balance) ?? ""
         let viewModel = PaymentCellViewModel(name: name, accountNumber: preferredAccountNumber, amount: formattedBalance)
@@ -141,8 +141,8 @@ extension PaymentAccount{
     }
 }
 
-extension SavingAccount {
-    func cellViewModel() -> SavingCellViewModel{
+public extension SavingAccount {
+    public func cellViewModel() -> SavingCellViewModel{
         
         let formattedBalance = currency.formatted(amount: balance) ?? ""
         let formattedTargetBalance = currency.formatted(amount: targetBalance) ?? ""

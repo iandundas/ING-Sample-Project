@@ -10,22 +10,28 @@ import UIKit
 import ReactiveKit
 import Bond
 
-protocol AccountsViewModelType{}
-class AccountsViewModel: AccountsViewModelType {
-    init(actions: AccountsViewController.Actions){
-    }
+public protocol AccountsViewModelType{
+    var title: String {get}
 }
 
-class AccountsViewController: BaseBoundViewController<AccountsViewModelType>  {
+public class AccountsViewModel: AccountsViewModelType {
+    public let title = "Accounts"
+    
+    public init(actions: AccountsViewController.Actions){}
+}
+
+public class AccountsViewController: BaseBoundViewController<AccountsViewModelType>  {
     
     // MARK: Outlets:
     @IBOutlet var headerContainer: UIView!
     @IBOutlet var filterOnlyVisibleAccountsSwitch: UISwitch!
     
-    var listViewController: ListViewController?
+    public var listViewController: ListViewController?
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = viewModel.title
         
         if let listViewController = listViewController{
             addChildViewController(listViewController)
@@ -43,13 +49,13 @@ class AccountsViewController: BaseBoundViewController<AccountsViewModelType>  {
 }
 
 
-extension AccountsViewController{
+public extension AccountsViewController{
     
-    struct Actions {
+    public struct Actions {
         public let filterOnlyVisibleAccounts: SafeSignal<Bool>
     }
     
-    var actions: Actions {
+    public var actions: Actions {
         return Actions(
             filterOnlyVisibleAccounts: self.filterOnlyVisibleAccountsSwitch.reactive.isOn.toSignal()
         )

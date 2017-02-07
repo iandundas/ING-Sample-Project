@@ -10,20 +10,20 @@ import UIKit
 
 // MARK: Payment Cell:
 
-struct PaymentCellViewModel {
+public struct PaymentCellViewModel {
     let name: String
     let accountNumber: String
     let amount: String // storing pre-formatted data, so String.
 }
 
-class PaymentCell: UITableViewCell {
-    static let defaultID = "PaymentAccountCell"
+public class PaymentCell: UITableViewCell {
+    static public let defaultID = "PaymentAccountCell"
     
-    @IBOutlet var accountName: UILabel!
-    @IBOutlet var amount: UILabel!
-    @IBOutlet var accountNumber: UILabel!
+    @IBOutlet private var accountName: UILabel!
+    @IBOutlet private var amount: UILabel!
+    @IBOutlet private var accountNumber: UILabel!
     
-    var viewModel: PaymentCellViewModel? {
+    public var viewModel: PaymentCellViewModel? {
         didSet{
             guard let viewModel = viewModel else {return}
             accountName.text = viewModel.name
@@ -37,22 +37,22 @@ class PaymentCell: UITableViewCell {
 
 // MARK: Savings Cell:
 
-struct SavingCellViewModel {
-    let name: String
-    let accountNumber: String
-    let balanceAmount: String
-    let targetAmount: String
+public struct SavingCellViewModel {
+    public let name: String
+    public let accountNumber: String
+    public let balanceAmount: String
+    public let targetAmount: String
 }
 
-class SavingCell: UITableViewCell {
-    static let defaultID = "SavingAccountCell"
+public class SavingCell: UITableViewCell {
+    static public let defaultID = "SavingAccountCell"
     
-    @IBOutlet var accountName: UILabel!
-    @IBOutlet var accountNumber: UILabel!
-    @IBOutlet var balanceAmount: UILabel!
-    @IBOutlet var targetAmount: UILabel!
+    @IBOutlet private var accountName: UILabel!
+    @IBOutlet private var accountNumber: UILabel!
+    @IBOutlet private var balanceAmount: UILabel!
+    @IBOutlet private var targetAmount: UILabel!
     
-    var viewModel: SavingCellViewModel? {
+    public var viewModel: SavingCellViewModel? {
         didSet{
             guard let viewModel = viewModel else {return}
             accountName.text = viewModel.name

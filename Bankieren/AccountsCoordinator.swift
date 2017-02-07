@@ -10,6 +10,7 @@ import UIKit
 import ReactiveKit
 import RealmSwift
 import Model
+import UserInterface
 
 class AccountsCoordinator: NSObject, Coordinator{
     
@@ -76,13 +77,13 @@ class AccountsCoordinator: NSObject, Coordinator{
 // Specific usage of AccountList VC:
 extension AccountsViewController {
     fileprivate static func create(viewModelFactory: @escaping (AccountsViewController) -> AccountsViewModelType) -> AccountsViewController{
-        return create(storyboard: UIStoryboard(name: "Accounts", bundle: Bundle.main), viewModelFactory: downcast(closure: viewModelFactory)) as! AccountsViewController
+        return create(storyboard: UIStoryboard(name: "Accounts", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! AccountsViewController
     }
 }
 
 // Specific usage of List VC:
 extension ListViewController {
     fileprivate static func create(viewModelFactory: @escaping (ListViewController) -> ListViewModelType) -> ListViewController{
-        return create(storyboard: UIStoryboard(name: "List", bundle: Bundle.main), viewModelFactory: downcast(closure: viewModelFactory)) as! ListViewController
+        return create(storyboard: UIStoryboard(name: "List", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! ListViewController
     }
 }

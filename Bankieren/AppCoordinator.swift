@@ -10,6 +10,7 @@ import UIKit
 import ReactiveKit
 import RealmSwift
 import Model
+import UserInterface
 
 class AppCoordinator: NSObject, Coordinator{
     

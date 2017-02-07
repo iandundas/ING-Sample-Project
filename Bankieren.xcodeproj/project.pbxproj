@@ -10,15 +10,11 @@
 		3C37A7231E48E27900724DD0 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7221E48E27900724DD0 /* AccountTests.swift */; };
 		3C37A7251E48E2EE00724DD0 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7241E48E2EE00724DD0 /* RealmHelper.swift */; };
 		3C37A7281E49027B00724DD0 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7271E49027B00724DD0 /* Currency.swift */; };
-		3C37A72A1E49049A00724DD0 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A7291E49049A00724DD0 /* List.storyboard */; };
 		3C37A72E1E4929CE00724DD0 /* PrimaryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A72D1E4929CE00724DD0 /* PrimaryKey.swift */; };
-		3C37A7301E49CCA300724DD0 /* ListCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A72F1E49CCA300724DD0 /* ListCells.swift */; };
 		3C37A7371E49E75000724DD0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C37A7361E49E75000724DD0 /* NotificationCenter.framework */; };
 		3C37A73A1E49E75000724DD0 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7391E49E75000724DD0 /* TodayViewController.swift */; };
 		3C37A73D1E49E75000724DD0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A73B1E49E75000724DD0 /* MainInterface.storyboard */; };
 		3C37A7411E49E75000724DD0 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3C37A7351E49E75000724DD0 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		3C37A74A1E49F35300724DD0 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A7491E49F35300724DD0 /* Accounts.storyboard */; };
-		3C37A74D1E49F50800724DD0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A74C1E49F50800724DD0 /* ListViewController.swift */; };
 		3C37A75C1E4A026300724DD0 /* UserInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C37A7531E4A026300724DD0 /* UserInterface.framework */; };
 		3C37A7631E4A026300724DD0 /* UserInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7621E4A026300724DD0 /* UserInterfaceTests.swift */; };
 		3C37A7651E4A026300724DD0 /* UserInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C37A7551E4A026300724DD0 /* UserInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +25,15 @@
 		3C37A7721E4A027600724DD0 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479E1E48CB0F006955F8 /* ReactiveKit.framework */; };
 		3C37A7731E4A027600724DD0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
 		3C37A7741E4A027600724DD0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
+		3C37A77C1E4A02FD00724DD0 /* Apperance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AA1E48CCA5006955F8 /* Apperance.swift */; };
+		3C37A77D1E4A02FD00724DD0 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AF1E48D328006955F8 /* AccountsViewController.swift */; };
+		3C37A77E1E4A02FD00724DD0 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A7491E49F35300724DD0 /* Accounts.storyboard */; };
+		3C37A77F1E4A02FD00724DD0 /* ListCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A72F1E49CCA300724DD0 /* ListCells.swift */; };
+		3C37A7801E4A02FD00724DD0 /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847B31E48D4A0006955F8 /* AccountListViewModel.swift */; };
+		3C37A7811E4A02FD00724DD0 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A7291E49049A00724DD0 /* List.storyboard */; };
+		3C37A7821E4A02FD00724DD0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A74C1E49F50800724DD0 /* ListViewController.swift */; };
+		3C37A7831E4A02FD00724DD0 /* BaseBoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847B51E48D4FA006955F8 /* BaseBoundViewController.swift */; };
+		3C37A7851E4A046000724DD0 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7841E4A046000724DD0 /* Bundle.swift */; };
 		3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847671E48C91D006955F8 /* AppDelegate.swift */; };
 		3CF8476F1E48C91D006955F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8476E1E48C91D006955F8 /* Assets.xcassets */; };
 		3CF847721E48C91D006955F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */; };
@@ -39,11 +44,7 @@
 		3CF847A41E48CB0F006955F8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
 		3CF847A51E48CB0F006955F8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
 		3CF847A81E48CC03006955F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847A71E48CC03006955F8 /* Coordinator.swift */; };
-		3CF847AB1E48CCA5006955F8 /* Apperance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AA1E48CCA5006955F8 /* Apperance.swift */; };
 		3CF847AE1E48D234006955F8 /* AccountsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AD1E48D234006955F8 /* AccountsCoordinator.swift */; };
-		3CF847B01E48D328006955F8 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847AF1E48D328006955F8 /* AccountsViewController.swift */; };
-		3CF847B41E48D4A0006955F8 /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847B31E48D4A0006955F8 /* AccountListViewModel.swift */; };
-		3CF847B61E48D4FA006955F8 /* BaseBoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847B51E48D4FA006955F8 /* BaseBoundViewController.swift */; };
 		3CF847C61E48D800006955F8 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847BD1E48D800006955F8 /* Model.framework */; };
 		3CF847CF1E48D800006955F8 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF847BF1E48D800006955F8 /* Model.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3CF847D21E48D800006955F8 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847BD1E48D800006955F8 /* Model.framework */; };
@@ -92,6 +93,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3CF847BC1E48D800006955F8;
 			remoteInfo = Model;
+		};
+		3C37A7771E4A02B200724DD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CF8475C1E48C91D006955F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CF847BC1E48D800006955F8;
+			remoteInfo = Model;
+		};
+		3C37A7791E4A02B500724DD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CF8475C1E48C91D006955F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C37A7521E4A026300724DD0;
+			remoteInfo = UserInterface;
 		};
 		3CF847C71E48D800006955F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -168,6 +183,7 @@
 		3C37A75B1E4A026300724DD0 /* UserInterfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserInterfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C37A7621E4A026300724DD0 /* UserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceTests.swift; sourceTree = "<group>"; };
 		3C37A7641E4A026300724DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C37A7841E4A046000724DD0 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		3CF847641E48C91D006955F8 /* Bankieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF847671E48C91D006955F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF8476E1E48C91D006955F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -184,7 +200,7 @@
 		3CF8479F1E48CB0F006955F8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		3CF847A01E48CB0F006955F8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		3CF847A71E48CC03006955F8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		3CF847AA1E48CCA5006955F8 /* Apperance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apperance.swift; sourceTree = "<group>"; };
+		3CF847AA1E48CCA5006955F8 /* Apperance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Apperance.swift; path = ../Bankieren/Apperance.swift; sourceTree = "<group>"; };
 		3CF847AD1E48D234006955F8 /* AccountsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsCoordinator.swift; sourceTree = "<group>"; };
 		3CF847AF1E48D328006955F8 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		3CF847B31E48D4A0006955F8 /* AccountListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
@@ -283,8 +299,8 @@
 		3C37A7461E49F2D700724DD0 /* ListViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3C37A72F1E49CCA300724DD0 /* ListCells.swift */,
 				3CF847B21E48D491006955F8 /* VMs */,
+				3C37A72F1E49CCA300724DD0 /* ListCells.swift */,
 				3C37A7291E49049A00724DD0 /* List.storyboard */,
 				3C37A74C1E49F50800724DD0 /* ListViewController.swift */,
 			);
@@ -294,19 +310,32 @@
 		3C37A7541E4A026300724DD0 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				3C37A7551E4A026300724DD0 /* UserInterface.h */,
-				3C37A7561E4A026300724DD0 /* Info.plist */,
+				3CF847AA1E48CCA5006955F8 /* Apperance.swift */,
+				3C37A7841E4A046000724DD0 /* Bundle.swift */,
+				3CF8479A1E48CAC1006955F8 /* ViewControllers */,
+				3C37A77B1E4A02CC00724DD0 /* Supporting */,
+				3C37A7611E4A026300724DD0 /* Tests */,
 			);
 			path = UserInterface;
 			sourceTree = "<group>";
 		};
-		3C37A7611E4A026300724DD0 /* UserInterfaceTests */ = {
+		3C37A7611E4A026300724DD0 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				3C37A7621E4A026300724DD0 /* UserInterfaceTests.swift */,
 				3C37A7641E4A026300724DD0 /* Info.plist */,
 			);
+			name = Tests;
 			path = UserInterfaceTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		3C37A77B1E4A02CC00724DD0 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				3C37A7551E4A026300724DD0 /* UserInterface.h */,
+				3C37A7561E4A026300724DD0 /* Info.plist */,
+			);
+			name = Supporting;
 			sourceTree = "<group>";
 		};
 		3CF8475B1E48C91D006955F8 = {
@@ -316,7 +345,6 @@
 				3CF847BE1E48D800006955F8 /* Model */,
 				3C37A7381E49E75000724DD0 /* TodayWidget */,
 				3C37A7541E4A026300724DD0 /* UserInterface */,
-				3C37A7611E4A026300724DD0 /* UserInterfaceTests */,
 				3CF847651E48C91D006955F8 /* Products */,
 				3CF8479B1E48CB0F006955F8 /* Frameworks */,
 			);
@@ -339,8 +367,6 @@
 			isa = PBXGroup;
 			children = (
 				3CF8477B1E48C91D006955F8 /* Tests */,
-				3CF847A91E48CC99006955F8 /* UI */,
-				3CF8479A1E48CAC1006955F8 /* ViewControllers */,
 				3CF847961E48CA72006955F8 /* Coordinators */,
 				3CF847951E48CA56006955F8 /* Supporting */,
 			);
@@ -399,11 +425,12 @@
 		3CF8479A1E48CAC1006955F8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3C37A7461E49F2D700724DD0 /* ListViewController */,
 				3CF847B51E48D4FA006955F8 /* BaseBoundViewController.swift */,
 				3CF847B11E48D477006955F8 /* Accounts */,
+				3C37A7461E49F2D700724DD0 /* ListViewController */,
 			);
 			name = ViewControllers;
+			path = ../Bankieren;
 			sourceTree = "<group>";
 		};
 		3CF8479B1E48CB0F006955F8 /* Frameworks */ = {
@@ -418,14 +445,6 @@
 				3C37A7361E49E75000724DD0 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3CF847A91E48CC99006955F8 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				3CF847AA1E48CCA5006955F8 /* Apperance.swift */,
-			);
-			name = UI;
 			sourceTree = "<group>";
 		};
 		3CF847AC1E48CEE0006955F8 /* Main */ = {
@@ -535,6 +554,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				3C37A77A1E4A02B500724DD0 /* PBXTargetDependency */,
+				3C37A7781E4A02B200724DD0 /* PBXTargetDependency */,
 			);
 			name = TodayWidget;
 			productName = TodayWidget;
@@ -721,6 +742,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C37A7811E4A02FD00724DD0 /* List.storyboard in Resources */,
+				3C37A77E1E4A02FD00724DD0 /* Accounts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,9 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CF847721E48C91D006955F8 /* LaunchScreen.storyboard in Resources */,
-				3C37A72A1E49049A00724DD0 /* List.storyboard in Resources */,
 				3CF8476F1E48C91D006955F8 /* Assets.xcassets in Resources */,
-				3C37A74A1E49F35300724DD0 /* Accounts.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,6 +814,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C37A7831E4A02FD00724DD0 /* BaseBoundViewController.swift in Sources */,
+				3C37A7851E4A046000724DD0 /* Bundle.swift in Sources */,
+				3C37A77D1E4A02FD00724DD0 /* AccountsViewController.swift in Sources */,
+				3C37A77C1E4A02FD00724DD0 /* Apperance.swift in Sources */,
+				3C37A7801E4A02FD00724DD0 /* AccountListViewModel.swift in Sources */,
+				3C37A7821E4A02FD00724DD0 /* ListViewController.swift in Sources */,
+				3C37A77F1E4A02FD00724DD0 /* ListCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,15 +836,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CF847B41E48D4A0006955F8 /* AccountListViewModel.swift in Sources */,
 				3CF847991E48CA88006955F8 /* AppCoordinator.swift in Sources */,
-				3C37A7301E49CCA300724DD0 /* ListCells.swift in Sources */,
-				3CF847B61E48D4FA006955F8 /* BaseBoundViewController.swift in Sources */,
 				3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */,
-				3CF847B01E48D328006955F8 /* AccountsViewController.swift in Sources */,
 				3CF847A81E48CC03006955F8 /* Coordinator.swift in Sources */,
-				3CF847AB1E48CCA5006955F8 /* Apperance.swift in Sources */,
-				3C37A74D1E49F50800724DD0 /* ListViewController.swift in Sources */,
 				3CF847AE1E48D234006955F8 /* AccountsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,6 +889,16 @@
 			isa = PBXTargetDependency;
 			target = 3CF847BC1E48D800006955F8 /* Model */;
 			targetProxy = 3C37A7751E4A029600724DD0 /* PBXContainerItemProxy */;
+		};
+		3C37A7781E4A02B200724DD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CF847BC1E48D800006955F8 /* Model */;
+			targetProxy = 3C37A7771E4A02B200724DD0 /* PBXContainerItemProxy */;
+		};
+		3C37A77A1E4A02B500724DD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C37A7521E4A026300724DD0 /* UserInterface */;
+			targetProxy = 3C37A7791E4A02B500724DD0 /* PBXContainerItemProxy */;
 		};
 		3CF847C81E48D800006955F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
