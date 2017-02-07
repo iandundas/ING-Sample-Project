@@ -49,6 +49,14 @@ public class AccountsViewController: BaseBoundViewController<AccountsViewModelTy
 }
 
 
+// Default usage of AccountList VC:
+public extension AccountsViewController {
+    public static func create(viewModelFactory: @escaping (AccountsViewController) -> AccountsViewModelType) -> AccountsViewController{
+        return create(storyboard: UIStoryboard(name: "Accounts", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! AccountsViewController
+    }
+}
+
+
 public extension AccountsViewController{
     
     public struct Actions {

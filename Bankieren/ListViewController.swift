@@ -57,4 +57,9 @@ public class ListViewController: BaseBoundViewController<ListViewModelType>, UIT
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.title(section: section)
     }
+// Default usage of List VC:
+public extension ListViewController {
+    public static func create(viewModelFactory: @escaping (ListViewController) -> ListViewModelType) -> ListViewController{
+        return create(storyboard: UIStoryboard(name: "List", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! ListViewController
+    }
 }

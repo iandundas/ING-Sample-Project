@@ -70,20 +70,5 @@ class AccountsCoordinator: NSObject, Coordinator{
             completion?(self)
         }
     }
-
 }
 
-
-// Specific usage of AccountList VC:
-extension AccountsViewController {
-    fileprivate static func create(viewModelFactory: @escaping (AccountsViewController) -> AccountsViewModelType) -> AccountsViewController{
-        return create(storyboard: UIStoryboard(name: "Accounts", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! AccountsViewController
-    }
-}
-
-// Specific usage of List VC:
-extension ListViewController {
-    fileprivate static func create(viewModelFactory: @escaping (ListViewController) -> ListViewModelType) -> ListViewController{
-        return create(storyboard: UIStoryboard(name: "List", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! ListViewController
-    }
-}
