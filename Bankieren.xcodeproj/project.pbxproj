@@ -13,6 +13,10 @@
 		3C37A72A1E49049A00724DD0 /* AccountList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A7291E49049A00724DD0 /* AccountList.storyboard */; };
 		3C37A72E1E4929CE00724DD0 /* PrimaryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A72D1E4929CE00724DD0 /* PrimaryKey.swift */; };
 		3C37A7301E49CCA300724DD0 /* AccountListCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A72F1E49CCA300724DD0 /* AccountListCells.swift */; };
+		3C37A7371E49E75000724DD0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C37A7361E49E75000724DD0 /* NotificationCenter.framework */; };
+		3C37A73A1E49E75000724DD0 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7391E49E75000724DD0 /* TodayViewController.swift */; };
+		3C37A73D1E49E75000724DD0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A73B1E49E75000724DD0 /* MainInterface.storyboard */; };
+		3C37A7411E49E75000724DD0 /* TodayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3C37A7351E49E75000724DD0 /* TodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847671E48C91D006955F8 /* AppDelegate.swift */; };
 		3CF8476F1E48C91D006955F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8476E1E48C91D006955F8 /* Assets.xcassets */; };
 		3CF847721E48C91D006955F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */; };
@@ -42,6 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3C37A73F1E49E75000724DD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CF8475C1E48C91D006955F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C37A7341E49E75000724DD0;
+			remoteInfo = TodayWidget;
+		};
 		3CF847C71E48D800006955F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3CF8475C1E48C91D006955F8 /* Project object */;
@@ -59,6 +70,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3C37A7451E49E75000724DD0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3C37A7411E49E75000724DD0 /* TodayWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CF847D71E48D800006955F8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,6 +114,11 @@
 		3C37A7291E49049A00724DD0 /* AccountList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AccountList.storyboard; sourceTree = "<group>"; };
 		3C37A72D1E4929CE00724DD0 /* PrimaryKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryKey.swift; sourceTree = "<group>"; };
 		3C37A72F1E49CCA300724DD0 /* AccountListCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListCells.swift; sourceTree = "<group>"; };
+		3C37A7351E49E75000724DD0 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C37A7361E49E75000724DD0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		3C37A7391E49E75000724DD0 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		3C37A73C1E49E75000724DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3C37A73E1E49E75000724DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CF847641E48C91D006955F8 /* Bankieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF847671E48C91D006955F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF8476E1E48C91D006955F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +150,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3C37A7321E49E75000724DD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C37A7371E49E75000724DD0 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CF847611E48C91D006955F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,11 +200,22 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		3C37A7381E49E75000724DD0 /* TodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3C37A7391E49E75000724DD0 /* TodayViewController.swift */,
+				3C37A73B1E49E75000724DD0 /* MainInterface.storyboard */,
+				3C37A73E1E49E75000724DD0 /* Info.plist */,
+			);
+			path = TodayWidget;
+			sourceTree = "<group>";
+		};
 		3CF8475B1E48C91D006955F8 = {
 			isa = PBXGroup;
 			children = (
 				3CF847661E48C91D006955F8 /* Bankieren */,
 				3CF847BE1E48D800006955F8 /* Model */,
+				3C37A7381E49E75000724DD0 /* TodayWidget */,
 				3CF847651E48C91D006955F8 /* Products */,
 				3CF8479B1E48CB0F006955F8 /* Frameworks */,
 			);
@@ -181,6 +227,7 @@
 				3CF847641E48C91D006955F8 /* Bankieren.app */,
 				3CF847BD1E48D800006955F8 /* Model.framework */,
 				3CF847C51E48D800006955F8 /* ModelTests.xctest */,
+				3C37A7351E49E75000724DD0 /* TodayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +311,7 @@
 				3CF8479E1E48CB0F006955F8 /* ReactiveKit.framework */,
 				3CF8479F1E48CB0F006955F8 /* Realm.framework */,
 				3CF847A01E48CB0F006955F8 /* RealmSwift.framework */,
+				3C37A7361E49E75000724DD0 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,6 +414,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3C37A7341E49E75000724DD0 /* TodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C37A7441E49E75000724DD0 /* Build configuration list for PBXNativeTarget "TodayWidget" */;
+			buildPhases = (
+				3C37A7311E49E75000724DD0 /* Sources */,
+				3C37A7321E49E75000724DD0 /* Frameworks */,
+				3C37A7331E49E75000724DD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayWidget;
+			productName = TodayWidget;
+			productReference = 3C37A7351E49E75000724DD0 /* TodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3CF847631E48C91D006955F8 /* Bankieren */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CF8478C1E48C91D006955F8 /* Build configuration list for PBXNativeTarget "Bankieren" */;
@@ -375,11 +440,13 @@
 				3CF847621E48C91D006955F8 /* Resources */,
 				3CF847A61E48CB1C006955F8 /* Copy Carthage dependancies */,
 				3CF847D71E48D800006955F8 /* Embed Frameworks */,
+				3C37A7451E49E75000724DD0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				3CF847D11E48D800006955F8 /* PBXTargetDependency */,
+				3C37A7401E49E75000724DD0 /* PBXTargetDependency */,
 			);
 			name = Bankieren;
 			productName = Bankieren;
@@ -433,6 +500,11 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Ian Dundas";
 				TargetAttributes = {
+					3C37A7341E49E75000724DD0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N8N37QWHHP;
+						ProvisioningStyle = Automatic;
+					};
 					3CF847631E48C91D006955F8 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = N8N37QWHHP;
@@ -469,11 +541,20 @@
 				3CF847631E48C91D006955F8 /* Bankieren */,
 				3CF847BC1E48D800006955F8 /* Model */,
 				3CF847C41E48D800006955F8 /* ModelTests */,
+				3C37A7341E49E75000724DD0 /* TodayWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3C37A7331E49E75000724DD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C37A73D1E49E75000724DD0 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CF847621E48C91D006955F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -523,6 +604,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3C37A7311E49E75000724DD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C37A73A1E49E75000724DD0 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CF847601E48C91D006955F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,6 +650,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3C37A7401E49E75000724DD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C37A7341E49E75000724DD0 /* TodayWidget */;
+			targetProxy = 3C37A73F1E49E75000724DD0 /* PBXContainerItemProxy */;
+		};
 		3CF847C81E48D800006955F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3CF847BC1E48D800006955F8 /* Model */;
@@ -574,6 +668,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3C37A73B1E49E75000724DD0 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C37A73C1E49E75000724DD0 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -585,6 +687,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3C37A7421E49E75000724DD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = N8N37QWHHP;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iandundas.Bankieren.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3C37A7431E49E75000724DD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = N8N37QWHHP;
+				INFOPLIST_FILE = TodayWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iandundas.Bankieren.TodayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		3CF8478A1E48C91D006955F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -811,6 +939,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3C37A7441E49E75000724DD0 /* Build configuration list for PBXNativeTarget "TodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C37A7421E49E75000724DD0 /* Debug */,
+				3C37A7431E49E75000724DD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3CF8475F1E48C91D006955F8 /* Build configuration list for PBXProject "Bankieren" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
