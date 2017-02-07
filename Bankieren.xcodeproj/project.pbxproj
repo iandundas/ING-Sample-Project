@@ -184,6 +184,8 @@
 		3C37A7621E4A026300724DD0 /* UserInterfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceTests.swift; sourceTree = "<group>"; };
 		3C37A7641E4A026300724DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C37A7841E4A046000724DD0 /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		3C37A78D1E4A104600724DD0 /* TodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayWidget.entitlements; sourceTree = "<group>"; };
+		3C37A78E1E4A106400724DD0 /* Bankieren.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bankieren.entitlements; sourceTree = "<group>"; };
 		3CF847641E48C91D006955F8 /* Bankieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF847671E48C91D006955F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF8476E1E48C91D006955F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		3C37A7381E49E75000724DD0 /* TodayWidget */ = {
 			isa = PBXGroup;
 			children = (
+				3C37A78D1E4A104600724DD0 /* TodayWidget.entitlements */,
 				3C37A7391E49E75000724DD0 /* TodayViewController.swift */,
 				3C37A73B1E49E75000724DD0 /* MainInterface.storyboard */,
 				3C37A73E1E49E75000724DD0 /* Info.plist */,
@@ -366,6 +369,7 @@
 		3CF847661E48C91D006955F8 /* Bankieren */ = {
 			isa = PBXGroup;
 			children = (
+				3C37A78E1E4A106400724DD0 /* Bankieren.entitlements */,
 				3CF8477B1E48C91D006955F8 /* Tests */,
 				3CF847961E48CA72006955F8 /* Coordinators */,
 				3CF847951E48CA56006955F8 /* Supporting */,
@@ -674,6 +678,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = N8N37QWHHP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3C37A7521E4A026300724DD0 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -690,6 +699,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = N8N37QWHHP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					3CF847BC1E48D800006955F8 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -935,6 +949,7 @@
 		3C37A7421E49E75000724DD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -948,6 +963,7 @@
 		3C37A7431E49E75000724DD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayWidget/TodayWidget.entitlements;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1136,6 +1152,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bankieren/Bankieren.entitlements;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1154,6 +1171,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Bankieren/Bankieren.entitlements;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
