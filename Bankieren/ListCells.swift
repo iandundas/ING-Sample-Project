@@ -19,9 +19,21 @@ public struct PaymentCellViewModel {
 public class PaymentCell: UITableViewCell {
     static public let defaultID = "PaymentAccountCell"
     
-    @IBOutlet private var accountName: UILabel!
-    @IBOutlet private var amount: UILabel!
-    @IBOutlet private var accountNumber: UILabel!
+    @IBOutlet private var accountName: UILabel!{
+        didSet{
+            accountName.font = Style.Fonts.cellTitleFont
+        }
+    }
+    @IBOutlet private var accountNumber: UILabel!{
+        didSet{
+            accountNumber.font = Style.Fonts.cellSubtitleFont
+        }
+    }
+    @IBOutlet private var amount: UILabel!{
+        didSet{
+            amount.font = Style.Fonts.cellValueFont
+        }
+    }
     
     public var viewModel: PaymentCellViewModel? {
         didSet{
@@ -47,10 +59,26 @@ public struct SavingCellViewModel {
 public class SavingCell: UITableViewCell {
     static public let defaultID = "SavingAccountCell"
     
-    @IBOutlet private var accountName: UILabel!
-    @IBOutlet private var accountNumber: UILabel!
-    @IBOutlet private var balanceAmount: UILabel!
-    @IBOutlet private var targetAmount: UILabel!
+    @IBOutlet private var accountName: UILabel!{
+        didSet{
+            accountName.font = Style.Fonts.cellTitleFont
+        }
+    }
+    @IBOutlet private var accountNumber: UILabel!{
+        didSet{
+            accountNumber.font = Style.Fonts.cellSubtitleFont
+        }
+    }
+    @IBOutlet private var balanceAmount: UILabel!{
+        didSet{
+            balanceAmount.font = Style.Fonts.cellValueFont
+        }
+    }
+    @IBOutlet private var targetAmount: UILabel!{
+        didSet{
+            targetAmount.font = Style.Fonts.cellSubvalueFont
+        }
+    }
     
     public var viewModel: SavingCellViewModel? {
         didSet{
