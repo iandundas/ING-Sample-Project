@@ -31,6 +31,13 @@ class AppCoordinator: NSObject, Coordinator{
         Style.applyGlobal()
         
         preloadData()
+        
+        DispatchQueue.main.async {
+            let mainFlow = AccountsCoordinator(presenter: self.presenter)
+            _ = self.startChild(coordinator: mainFlow) { (mainFlow) in
+                //
+            }
+        }
     }
     
     /// Tells the coordinator that it is done and that it should rewind the view controller state to where it was before `start` was called.
@@ -69,9 +76,9 @@ class AppCoordinator: NSObject, Coordinator{
             }
         }
         
-        if realm.objects(SavingsAccount.self).count == 0 {
+        if realm.objects(SavingAccount.self).count == 0 {
             
-            let accountC = SavingsAccount()
+            let accountC = SavingAccount()
             accountC.balanceInCents = 15000;
             accountC.currency = Currency.eur
             accountC.id = "700000027559"
@@ -80,6 +87,11 @@ class AppCoordinator: NSObject, Coordinator{
             accountC.alias = "SAVINGS"
             accountC.visible = true
             accountC.iban = ""
+            accountC.linkedAccountId = "748757694"
+            accountC.productName = "Oranje Spaarrekening"
+            accountC.productType = "1000"
+            accountC.savingsTargetReached = true
+            accountC.targetAmountInCents = 2000
             
             try! realm.write {
                 realm.add([accountC], update: false)

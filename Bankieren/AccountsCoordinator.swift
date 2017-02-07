@@ -8,6 +8,8 @@
 
 import UIKit
 import ReactiveKit
+import RealmSwift
+import Model
 
 class AccountsCoordinator: NSObject, Coordinator{
     
@@ -26,16 +28,29 @@ class AccountsCoordinator: NSObject, Coordinator{
 
     /// Tells the coordinator to create its initial view controller and take over the user flow.
     func start(withCallback completion: CoordinatorCallback?) {
-        
-        let selectPlayer = SelectPlayerViewController.create { (viewController) -> SelectPlayerViewModel<RealPlayer> in
-            viewController.actions.tappedScores.bind(to: self.requestedToViewHighScores)
-            
-            let viewModel = SelectPlayerViewModel(actions: viewController.actions, players: self.demoPlayers)
-            viewModel.didChoosePlayers.bind(to: self.playersWishingToPlayGame)
+
+        let accountsList = AccountListViewController.create { (viewController) -> AccountListViewModelType in
+            let viewModel = AccountListViewModel(actions: viewController.actions)
             return viewModel
         }
+
+        accountsList.createCell = { (viewModel, indexPath, tableView) -> UITableViewCell in
+            guard let handle = viewModel as? AccountListCoordinatorHandle else {fatalError("ViewModel should implement AccountListCoordinatorHandle")}
+            
+            let section = handle.section(index: indexPath.section)
+            switch section {
+            case .paymentAccounts:
+                let cell = tableView.dequeueReusableCell(withIdentifier: PaymentCell.defaultID) as! PaymentCell
+                cell.viewModel = handle.paymentCellData(index: indexPath.row)
+                return cell
+            case .savingAccounts:
+                let cell = tableView.dequeueReusableCell(withIdentifier: SavingCell.defaultID) as! SavingCell
+                cell.viewModel = handle.savingCellData(index: indexPath.row)
+                return cell
+            }
+        }
         
-        presenter.viewControllers = [selectPlayer]
+        presenter.viewControllers = [accountsList]
     }
     
     
@@ -48,3 +63,10 @@ class AccountsCoordinator: NSObject, Coordinator{
 
 }
 
+
+// Specific usage of AccountList VC:
+extension AccountListViewController {
+    fileprivate static func create(viewModelFactory: @escaping (AccountListViewController) -> AccountListViewModelType) -> AccountListViewController{
+        return create(storyboard: UIStoryboard(name: "AccountList", bundle: Bundle.main), viewModelFactory: downcast(closure: viewModelFactory)) as! AccountListViewController
+    }
+}

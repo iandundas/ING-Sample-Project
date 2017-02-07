@@ -20,7 +20,7 @@ public protocol AccountType{
     var iban: String {get}
 }
 
-public class SavingsAccount: Object, AccountType {
+public class SavingAccount: Object, AccountType {
     
     public dynamic var id: String = ""
     
@@ -53,8 +53,8 @@ public class SavingsAccount: Object, AccountType {
     public dynamic var linkedAccountId: String = ""
     public dynamic var productName: String = ""
     public dynamic var productType: String = ""
-    public dynamic var savingsTargetReached: String = ""
-    public dynamic var targetAmountInCents: String = ""
+    public dynamic var savingsTargetReached: Bool = false
+    public dynamic var targetAmountInCents: Int = 0
 }
 
 public class PaymentAccount: Object, AccountType {
@@ -86,3 +86,20 @@ public class PaymentAccount: Object, AccountType {
     public dynamic var visible: Bool = false
     public dynamic var iban: String = ""
 }
+
+extension AccountType {
+    public var balance: NSDecimalNumber{
+        return NSDecimalNumber(value: balanceInCents).dividing(by: 100)
+    }
+    
+    public var preferredAccountNumber: String {
+        return iban.characters.count > 0 ?  iban : number
+    }
+}
+extension SavingAccount {
+    public var targetBalance: NSDecimalNumber{
+        return NSDecimalNumber(value: targetAmountInCents).dividing(by: 100)
+    }
+}
+
+
