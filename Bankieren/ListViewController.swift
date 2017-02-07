@@ -1,27 +1,23 @@
 //
-//  AccountListViewController.swift
+//  ListViewController.swift
 //  Bankieren
 //
-//  Created by Ian Dundas on 06/02/2017.
+//  Created by Ian Dundas on 07/02/2017.
 //  Copyright © 2017 Ian Dundas. All rights reserved.
 //
 
 import UIKit
 import ReactiveKit
-import Bond
 
-protocol AccountListViewModelType{
-    var accountsUpdated: SafePublishSubject<AccountListSection> {get}
+protocol ListViewModelType{
+    var listDidUpdate: SafeSignal<Void> {get}
     
     func sectionCount() -> Int
     func itemCount(section index: Int) -> Int
-    func title(section index: Int) -> String
+    func title(section index: Int) -> String?
 }
 
-class AccountListViewController: BaseBoundViewController<AccountListViewModelType>, UITableViewDelegate, UITableViewDataSource  {
-    
-    // MARK: Outlets:
-    @IBOutlet var filterOnlyVisibleAccountsSwitch: UISwitch!
+class ListViewController: BaseBoundViewController<ListViewModelType>, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!{
         didSet{
             tableView.delegate = self
@@ -30,7 +26,7 @@ class AccountListViewController: BaseBoundViewController<AccountListViewModelTyp
     }
     
     // MARK: Configuration points:
-    var createCell: ((AccountListViewModelType, IndexPath, UITableView) -> UITableViewCell)?
+    var createCell: ((ListViewModelType, IndexPath, UITableView) -> UITableViewCell)?
     
     
     // MARK: View Lifecycle:
@@ -39,16 +35,16 @@ class AccountListViewController: BaseBoundViewController<AccountListViewModelTyp
         view.backgroundColor = .red
     }
     
-    override func bindTo(viewModel: AccountListViewModelType) {
-        
-        viewModel.accountsUpdated.bind(to: self.tableView) { (tableView: UITableView, section: AccountListSection) in
-            // TODO implement a more sophisticated change diff for updating the tableview
+    override func bindTo(viewModel: ListViewModelType) {
+     
+        // bind(to: Deallocatable) removes need to [weak self] to access tableview
+        viewModel.listDidUpdate.bind(to: self.tableView) { (tableView: UITableView, _) in
             tableView.reloadData()
         }
     }
     
     
-    // MARK: UITableViewDelegate: 
+    // MARK: UITableViewDelegate:
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.sectionCount()
@@ -65,19 +61,5 @@ class AccountListViewController: BaseBoundViewController<AccountListViewModelTyp
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.title(section: section)
-    }
-}
-
-
-extension AccountListViewController{
-    
-    struct Actions {
-        public let filterOnlyVisibleAccounts: SafeSignal<Bool>
-    }
-    
-    var actions: Actions {
-        return Actions(
-            filterOnlyVisibleAccounts: self.filterOnlyVisibleAccountsSwitch.reactive.isOn.toSignal()
-        )
     }
 }

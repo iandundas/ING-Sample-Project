@@ -31,7 +31,11 @@ protocol AccountListCoordinatorHandle{
     func savingCellData(index: Int) -> SavingCellViewModel
 }
 
-class AccountListViewModel: AccountListViewModelType, AccountListCoordinatorHandle{
+class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
+    
+    var listDidUpdate: Signal<Void, NoError>{
+        return accountsUpdated.map {_ in }
+    }
     
     let accountsUpdated = SafePublishSubject<AccountListSection>()
     
@@ -60,7 +64,7 @@ class AccountListViewModel: AccountListViewModelType, AccountListCoordinatorHand
     private var savingUpdatesToken: NotificationToken? = nil
     
     private let bag = DisposeBag()
-    init(actions: AccountListViewController.Actions){
+    init(actions: AccountsViewController.Actions){
         
         let realm = try! Realm()
         
@@ -103,7 +107,7 @@ class AccountListViewModel: AccountListViewModelType, AccountListCoordinatorHand
         }
     }
     
-    func title(section index: Int) -> String{
+    func title(section index: Int) -> String?{
         return section(index: index).title
     }
     
