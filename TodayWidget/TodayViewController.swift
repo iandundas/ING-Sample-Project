@@ -14,55 +14,6 @@ import RealmSwift
 import Model
 import ViewModels
 
-class WidgetAccountsListViewModel: ListViewModelType, AccountListCoordinatorHandle{
-    
-    public var listDidUpdate = SafeSignal<Void>.just()
-    
-    fileprivate var paymentAccounts: Results<PaymentAccount>
-    fileprivate var savingAccounts: Results<SavingAccount>
-    
-    public init(){
-        let realm = try! Realm()
-        
-        paymentAccounts = realm.objects(PaymentAccount.self)
-        savingAccounts = realm.objects(SavingAccount.self)
-    }
-    
-    public func sectionCount() -> Int {
-        return 2
-    }
-    
-    public func itemCount(section index: Int) -> Int {
-        switch section(index: index){
-        case .paymentAccounts: return paymentAccounts.count
-        case .savingAccounts: return savingAccounts.count
-        }
-    }
-    
-    public func title(section index: Int) -> String?{
-        return section(index: index).title
-    }
-    
-    
-    // MARK: AccountListCoordinatorHandle
-    
-    public func section(index:Int) -> AccountListSection{
-        switch index{
-        case 0: return .paymentAccounts
-        case 1: return .savingAccounts
-        default: fatalError("Section not found for index: \(index)")
-        }
-    }
-    
-    public func paymentCellData(index: Int) -> PaymentCellData{
-        return paymentAccounts[index].cellViewModel()
-    }
-    
-    public func savingCellData(index: Int) -> SavingCellData{
-        return savingAccounts[index].cellViewModel()
-    }
-}
-
 class TodayViewController: UIViewController, NCWidgetProviding {
 
     let listViewController = ListViewController.create(viewModelFactory: { (listViewController) -> ListViewModelType in

@@ -12,6 +12,15 @@ import RealmSwift
 import Model
 import UserInterface
 
+
+// The interface that the Coordinator sees is different to the interface the ViewController sees:
+public protocol AccountListCoordinatorHandle{
+    func section(index:Int) -> AccountListSection
+    
+    func paymentCellData(index: Int) -> PaymentCellData
+    func savingCellData(index: Int) -> SavingCellData
+}
+
 public enum AccountListSection{
     case paymentAccounts
     case savingAccounts
@@ -22,13 +31,6 @@ public enum AccountListSection{
         case .savingAccounts: return "Savings"
         }
     }
-}
-
-public protocol AccountListCoordinatorHandle{
-    func section(index:Int) -> AccountListSection
-    
-    func paymentCellData(index: Int) -> PaymentCellData
-    func savingCellData(index: Int) -> SavingCellData
 }
 
 public class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{

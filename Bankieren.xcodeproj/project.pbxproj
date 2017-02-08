@@ -50,6 +50,7 @@
 		3C9A10871E4B1227006E77D3 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479E1E48CB0F006955F8 /* ReactiveKit.framework */; };
 		3C9A10881E4B1227006E77D3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
 		3C9A10891E4B1227006E77D3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
+		3C9A10981E4B20EB006E77D3 /* WidgetAccountsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9A10961E4B20BC006E77D3 /* WidgetAccountsListViewModel.swift */; };
 		3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847671E48C91D006955F8 /* AppDelegate.swift */; };
 		3CF8476F1E48C91D006955F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8476E1E48C91D006955F8 /* Assets.xcassets */; };
 		3CF847721E48C91D006955F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */; };
@@ -252,6 +253,7 @@
 		3C9A10701E4B11BA006E77D3 /* ViewModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsTests.swift; sourceTree = "<group>"; };
 		3C9A10721E4B11BA006E77D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C9A107F1E4B11F7006E77D3 /* AccountsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
+		3C9A10961E4B20BC006E77D3 /* WidgetAccountsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetAccountsListViewModel.swift; sourceTree = "<group>"; };
 		3CF847641E48C91D006955F8 /* Bankieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF847671E48C91D006955F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF8476E1E48C91D006955F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -434,9 +436,10 @@
 			isa = PBXGroup;
 			children = (
 				3CF847661E48C91D006955F8 /* Bankieren */,
-				3C37A7541E4A026300724DD0 /* UserInterface */,
-				3C37A7381E49E75000724DD0 /* TodayWidget */,
 				3CF847BE1E48D800006955F8 /* Model */,
+				3C37A7381E49E75000724DD0 /* TodayWidget */,
+				3C37A7541E4A026300724DD0 /* UserInterface */,
+				3C9A10621E4B11BA006E77D3 /* ViewModels */,
 			);
 			name = "Target Source";
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				3C37A7391E49E75000724DD0 /* TodayViewController.swift */,
+				3C9A10961E4B20BC006E77D3 /* WidgetAccountsListViewModel.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -501,7 +505,6 @@
 			isa = PBXGroup;
 			children = (
 				3C9A10561E4B0F07006E77D3 /* Target Source */,
-				3C9A10621E4B11BA006E77D3 /* ViewModels */,
 				3CF847651E48C91D006955F8 /* Products */,
 				3CF8479B1E48CB0F006955F8 /* Frameworks */,
 			);
@@ -1044,6 +1047,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9A10981E4B20EB006E77D3 /* WidgetAccountsListViewModel.swift in Sources */,
 				3C37A73A1E49E75000724DD0 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1682,6 +1686,7 @@
 				3C9A10791E4B11BA006E77D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C9A107D1E4B11BA006E77D3 /* Build configuration list for PBXNativeTarget "ViewModelsTests" */ = {
 			isa = XCConfigurationList;
@@ -1690,6 +1695,7 @@
 				3C9A107B1E4B11BA006E77D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CF8475F1E48C91D006955F8 /* Build configuration list for PBXProject "Bankieren" */ = {
 			isa = XCConfigurationList;
