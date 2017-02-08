@@ -32,10 +32,11 @@ class AccountsCoordinator: NSObject, Coordinator{
         
         let accountsScreen = AccountsViewController.create { (accountsViewController) -> AccountsViewModelType in
             
-            let listViewController = ListViewController.create(viewModelFactory: { (listViewController) -> ListViewModelType in
-                // pass the actions from the Accounts screen (i.e. the filterOnlyVisibleAccountsSwitch) to the AccountsListViewModel
+            // Instantiate the ListViewController, passing it's viewmodel the
+            // actions (i.e. UI slider events) from the accountsViewController:
+            let listViewController = ListViewController.create { (listViewController) -> ListViewModelType in
                 return AccountListViewModel(actions: accountsViewController.actions)
-            })
+            }
             
             listViewController.createCell = { (viewModel, indexPath, tableView) -> UITableViewCell in
                 guard let handle = viewModel as? AccountListCoordinatorHandle else {fatalError("ViewModel should implement AccountListCoordinatorHandle")}

@@ -353,13 +353,21 @@
 			name = Supporting;
 			sourceTree = "<group>";
 		};
-		3CF8475B1E48C91D006955F8 = {
+		3C9A10561E4B0F07006E77D3 /* Target Source */ = {
 			isa = PBXGroup;
 			children = (
 				3CF847661E48C91D006955F8 /* Bankieren */,
-				3CF847BE1E48D800006955F8 /* Model */,
-				3C37A7381E49E75000724DD0 /* TodayWidget */,
 				3C37A7541E4A026300724DD0 /* UserInterface */,
+				3C37A7381E49E75000724DD0 /* TodayWidget */,
+				3CF847BE1E48D800006955F8 /* Model */,
+			);
+			name = "Target Source";
+			sourceTree = "<group>";
+		};
+		3CF8475B1E48C91D006955F8 = {
+			isa = PBXGroup;
+			children = (
+				3C9A10561E4B0F07006E77D3 /* Target Source */,
 				3CF847651E48C91D006955F8 /* Products */,
 				3CF8479B1E48CB0F006955F8 /* Frameworks */,
 			);
@@ -381,7 +389,6 @@
 		3CF847661E48C91D006955F8 /* Bankieren */ = {
 			isa = PBXGroup;
 			children = (
-				3C37A78E1E4A106400724DD0 /* Bankieren.entitlements */,
 				3CF8477B1E48C91D006955F8 /* Tests */,
 				3CF847961E48CA72006955F8 /* Coordinators */,
 				3CF847951E48CA56006955F8 /* Supporting */,
@@ -412,6 +419,7 @@
 		3CF847951E48CA56006955F8 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				3C37A78E1E4A106400724DD0 /* Bankieren.entitlements */,
 				3CF8476E1E48C91D006955F8 /* Assets.xcassets */,
 				3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */,
 				3CF847731E48C91D006955F8 /* Info.plist */,
@@ -1311,6 +1319,7 @@
 				3C37A7431E49E75000724DD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C37A76A1E4A026300724DD0 /* Build configuration list for PBXNativeTarget "UserInterface" */ = {
 			isa = XCConfigurationList;
@@ -1319,6 +1328,7 @@
 				3C37A76C1E4A026300724DD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C37A76D1E4A026300724DD0 /* Build configuration list for PBXNativeTarget "UserInterfaceTests" */ = {
 			isa = XCConfigurationList;
@@ -1327,6 +1337,7 @@
 				3C37A76F1E4A026300724DD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3CF8475F1E48C91D006955F8 /* Build configuration list for PBXProject "Bankieren" */ = {
 			isa = XCConfigurationList;

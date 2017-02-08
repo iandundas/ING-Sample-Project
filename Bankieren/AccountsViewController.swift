@@ -33,6 +33,7 @@ public class AccountsViewController: BaseBoundViewController<AccountsViewModelTy
         
         title = viewModel.title
         
+        // If a listViewController was provided, add it as a Child View Controller:
         if let listViewController = listViewController{
             addChildViewController(listViewController)
             view.addSubview(listViewController.view)
@@ -48,15 +49,6 @@ public class AccountsViewController: BaseBoundViewController<AccountsViewModelTy
     }
 }
 
-
-// Default usage of AccountList VC:
-public extension AccountsViewController {
-    public static func create(viewModelFactory: @escaping (AccountsViewController) -> AccountsViewModelType) -> AccountsViewController{
-        return create(storyboard: UIStoryboard(name: "Accounts", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! AccountsViewController
-    }
-}
-
-
 public extension AccountsViewController{
     
     public struct Actions {
@@ -67,5 +59,13 @@ public extension AccountsViewController{
         return Actions(
             filterOnlyVisibleAccounts: self.filterOnlyVisibleAccountsSwitch.reactive.isOn.toSignal()
         )
+    }
+}
+
+
+// Default usage of AccountList VC:
+public extension AccountsViewController {
+    public static func create(viewModelFactory: @escaping (AccountsViewController) -> AccountsViewModelType) -> AccountsViewController{
+        return create(storyboard: UIStoryboard(name: "Accounts", bundle: Bundle.ui), viewModelFactory: downcast(closure: viewModelFactory)) as! AccountsViewController
     }
 }
