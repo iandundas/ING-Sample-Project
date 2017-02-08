@@ -9,7 +9,7 @@
 import XCTest
 @testable import ViewModels
 
-class ViewModelsTests: XCTestCase {
+class AccountListViewModelTests: RealmTestCase {
     
     override func setUp() {
         super.setUp()

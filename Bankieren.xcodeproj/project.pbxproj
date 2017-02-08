@@ -51,6 +51,13 @@
 		3C9A10881E4B1227006E77D3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
 		3C9A10891E4B1227006E77D3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
 		3C9A10981E4B20EB006E77D3 /* WidgetAccountsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9A10961E4B20BC006E77D3 /* WidgetAccountsListViewModel.swift */; };
+		3C9A109A1E4B2F03006E77D3 /* RealmHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9A10991E4B2F03006E77D3 /* RealmHelpers.swift */; };
+		3C9A109C1E4B2FB1006E77D3 /* ReactiveKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CF8479E1E48CB0F006955F8 /* ReactiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3C9A109D1E4B2FB1006E77D3 /* Realm.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3C9A109E1E4B2FB1006E77D3 /* RealmSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3C9A109F1E4B2FDE006E77D3 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479E1E48CB0F006955F8 /* ReactiveKit.framework */; };
+		3C9A10A01E4B2FDE006E77D3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
+		3C9A10A11E4B2FDE006E77D3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
 		3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847671E48C91D006955F8 /* AppDelegate.swift */; };
 		3CF8476F1E48C91D006955F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8476E1E48C91D006955F8 /* Assets.xcassets */; };
 		3CF847721E48C91D006955F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */; };
@@ -195,6 +202,18 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C9A109B1E4B2FA6006E77D3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3C9A109C1E4B2FB1006E77D3 /* ReactiveKit.framework in CopyFiles */,
+				3C9A109D1E4B2FB1006E77D3 /* Realm.framework in CopyFiles */,
+				3C9A109E1E4B2FB1006E77D3 /* RealmSwift.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CF847D71E48D800006955F8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +273,7 @@
 		3C9A10721E4B11BA006E77D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C9A107F1E4B11F7006E77D3 /* AccountsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		3C9A10961E4B20BC006E77D3 /* WidgetAccountsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetAccountsListViewModel.swift; sourceTree = "<group>"; };
+		3C9A10991E4B2F03006E77D3 /* RealmHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelpers.swift; sourceTree = "<group>"; };
 		3CF847641E48C91D006955F8 /* Bankieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF847671E48C91D006955F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF8476E1E48C91D006955F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -335,6 +355,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9A106A1E4B11BA006E77D3 /* ViewModels.framework in Frameworks */,
+				3C9A109F1E4B2FDE006E77D3 /* ReactiveKit.framework in Frameworks */,
+				3C9A10A01E4B2FDE006E77D3 /* Realm.framework in Frameworks */,
+				3C9A10A11E4B2FDE006E77D3 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +480,7 @@
 		3C9A106F1E4B11BA006E77D3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3C9A10991E4B2F03006E77D3 /* RealmHelpers.swift */,
 				3C9A10701E4B11BA006E77D3 /* ViewModelsTests.swift */,
 				3C9A10721E4B11BA006E77D3 /* Info.plist */,
 			);
@@ -791,6 +815,7 @@
 				3C9A10651E4B11BA006E77D3 /* Sources */,
 				3C9A10661E4B11BA006E77D3 /* Frameworks */,
 				3C9A10671E4B11BA006E77D3 /* Resources */,
+				3C9A109B1E4B2FA6006E77D3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1087,6 +1112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9A10711E4B11BA006E77D3 /* ViewModelsTests.swift in Sources */,
+				3C9A109A1E4B2F03006E77D3 /* RealmHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1399,6 +1425,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ViewModelsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iandundas.ViewModelsTests;
@@ -1413,6 +1443,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = N8N37QWHHP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ViewModelsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iandundas.ViewModelsTests;
