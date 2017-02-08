@@ -36,6 +36,10 @@ public class ListViewController: BaseBoundViewController<ListViewModelType>, UIT
      
         // bind(to: Deallocatable) removes need to [weak self] to access tableview
         viewModel.listDidUpdate.bind(to: self.tableView) { (tableView: UITableView, _) in
+            // TODO: refactor to provide a Changeset diff from viewModel 
+            // in order to make fine-grained updates to the TableView.
+            
+            // For now, just reload data:
             tableView.reloadData()
         }
     }

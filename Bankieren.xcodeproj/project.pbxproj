@@ -10,7 +10,6 @@
 		3C37A7231E48E27900724DD0 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7221E48E27900724DD0 /* AccountTests.swift */; };
 		3C37A7251E48E2EE00724DD0 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7241E48E2EE00724DD0 /* RealmHelper.swift */; };
 		3C37A7281E49027B00724DD0 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7271E49027B00724DD0 /* Currency.swift */; };
-		3C37A72E1E4929CE00724DD0 /* PrimaryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A72D1E4929CE00724DD0 /* PrimaryKey.swift */; };
 		3C37A7371E49E75000724DD0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C37A7361E49E75000724DD0 /* NotificationCenter.framework */; };
 		3C37A73A1E49E75000724DD0 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C37A7391E49E75000724DD0 /* TodayViewController.swift */; };
 		3C37A73D1E49E75000724DD0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C37A73B1E49E75000724DD0 /* MainInterface.storyboard */; };
@@ -228,7 +227,6 @@
 		3C37A7241E48E2EE00724DD0 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = ../Model/RealmHelper.swift; sourceTree = "<group>"; };
 		3C37A7271E49027B00724DD0 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		3C37A7291E49049A00724DD0 /* List.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
-		3C37A72D1E4929CE00724DD0 /* PrimaryKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryKey.swift; sourceTree = "<group>"; };
 		3C37A72F1E49CCA300724DD0 /* ListCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCells.swift; sourceTree = "<group>"; };
 		3C37A7351E49E75000724DD0 /* TodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C37A7361E49E75000724DD0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -629,7 +627,6 @@
 		3CF847BE1E48D800006955F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3C37A72D1E4929CE00724DD0 /* PrimaryKey.swift */,
 				3CF847E31E48D951006955F8 /* Classes */,
 				3CF847DB1E48D80D006955F8 /* Supporting */,
 				3CF847CB1E48D800006955F8 /* Tests */,
@@ -1106,7 +1103,6 @@
 			files = (
 				3C37A7281E49027B00724DD0 /* Currency.swift in Sources */,
 				3CF847E51E48D962006955F8 /* Account.swift in Sources */,
-				3C37A72E1E4929CE00724DD0 /* PrimaryKey.swift in Sources */,
 				3C37A78C1E4A0F4A00724DD0 /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1261,6 +1257,7 @@
 		3C37A76B1E4A026300724DD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1287,6 +1284,7 @@
 		3C37A76C1E4A026300724DD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1341,6 +1339,7 @@
 		3C9A10781E4B11BA006E77D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1367,6 +1366,7 @@
 		3C9A10791E4B11BA006E77D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1552,6 +1552,7 @@
 		3CF847D51E48D800006955F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1580,6 +1581,7 @@
 		3CF847D61E48D800006955F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;

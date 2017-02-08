@@ -8,7 +8,6 @@
 
 import Foundation
 import ReactiveKit
-import Bond
 import RealmSwift
 import Model
 import UserInterface
