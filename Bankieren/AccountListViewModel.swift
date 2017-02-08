@@ -135,14 +135,11 @@ public class AccountListViewModel: ListViewModelType, AccountListCoordinatorHand
     private var savingUpdatesToken: NotificationToken? = nil
     
     private let bag = DisposeBag()
-    public init(actions: AccountsViewController.Actions){
-        
-        let realm = try! Realm()
+    public init(actions: AccountsViewController.Actions, realm: Realm = try! Realm()){
         
         // default values:
         paymentAccounts = realm.objects(PaymentAccount.self)
         savingAccounts = realm.objects(SavingAccount.self)
-        
         
         
         // When actions.filterOnlyVisibleAccounts changes, update the Realm Result query for payment and savings:

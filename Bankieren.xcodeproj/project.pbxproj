@@ -58,6 +58,9 @@
 		3C9A109F1E4B2FDE006E77D3 /* ReactiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479E1E48CB0F006955F8 /* ReactiveKit.framework */; };
 		3C9A10A01E4B2FDE006E77D3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF8479F1E48CB0F006955F8 /* Realm.framework */; };
 		3C9A10A11E4B2FDE006E77D3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847A01E48CB0F006955F8 /* RealmSwift.framework */; };
+		3C9A10A41E4B3176006E77D3 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CF847E61E48DB7E006955F8 /* Nimble.framework */; };
+		3C9A10A51E4B3178006E77D3 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CF847E61E48DB7E006955F8 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3C9A10AD1E4B3419006E77D3 /* ReactiveKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9A10AA1E4B33E7006E77D3 /* ReactiveKitHelpers.swift */; };
 		3CF847681E48C91D006955F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF847671E48C91D006955F8 /* AppDelegate.swift */; };
 		3CF8476F1E48C91D006955F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CF8476E1E48C91D006955F8 /* Assets.xcassets */; };
 		3CF847721E48C91D006955F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CF847701E48C91D006955F8 /* LaunchScreen.storyboard */; };
@@ -174,6 +177,13 @@
 			remoteGlobalIDString = 3C9A10601E4B11BA006E77D3;
 			remoteInfo = ViewModels;
 		};
+		3C9A10A61E4B31D7006E77D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CF8475C1E48C91D006955F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C37A7521E4A026300724DD0;
+			remoteInfo = UserInterface;
+		};
 		3CF847C71E48D800006955F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3CF8475C1E48C91D006955F8 /* Project object */;
@@ -210,6 +220,7 @@
 			files = (
 				3C9A109C1E4B2FB1006E77D3 /* ReactiveKit.framework in CopyFiles */,
 				3C9A109D1E4B2FB1006E77D3 /* Realm.framework in CopyFiles */,
+				3C9A10A51E4B3178006E77D3 /* Nimble.framework in CopyFiles */,
 				3C9A109E1E4B2FB1006E77D3 /* RealmSwift.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +285,7 @@
 		3C9A107F1E4B11F7006E77D3 /* AccountsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		3C9A10961E4B20BC006E77D3 /* WidgetAccountsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetAccountsListViewModel.swift; sourceTree = "<group>"; };
 		3C9A10991E4B2F03006E77D3 /* RealmHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelpers.swift; sourceTree = "<group>"; };
+		3C9A10AA1E4B33E7006E77D3 /* ReactiveKitHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveKitHelpers.swift; sourceTree = "<group>"; };
 		3CF847641E48C91D006955F8 /* Bankieren.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankieren.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF847671E48C91D006955F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF8476E1E48C91D006955F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -354,6 +366,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9A10A41E4B3176006E77D3 /* Nimble.framework in Frameworks */,
 				3C9A106A1E4B11BA006E77D3 /* ViewModels.framework in Frameworks */,
 				3C9A109F1E4B2FDE006E77D3 /* ReactiveKit.framework in Frameworks */,
 				3C9A10A01E4B2FDE006E77D3 /* Realm.framework in Frameworks */,
@@ -480,7 +493,7 @@
 		3C9A106F1E4B11BA006E77D3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3C9A10991E4B2F03006E77D3 /* RealmHelpers.swift */,
+				3C9A10AC1E4B33FB006E77D3 /* Helpers */,
 				3C9A10701E4B11BA006E77D3 /* ViewModelsTests.swift */,
 				3C9A10721E4B11BA006E77D3 /* Info.plist */,
 			);
@@ -523,6 +536,15 @@
 				3C9A10961E4B20BC006E77D3 /* WidgetAccountsListViewModel.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		3C9A10AC1E4B33FB006E77D3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3C9A10991E4B2F03006E77D3 /* RealmHelpers.swift */,
+				3C9A10AA1E4B33E7006E77D3 /* ReactiveKitHelpers.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		3CF8475B1E48C91D006955F8 = {
@@ -820,6 +842,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3C9A10A71E4B31D7006E77D3 /* PBXTargetDependency */,
 				3C9A106C1E4B11BA006E77D3 /* PBXTargetDependency */,
 				3C9A106E1E4B11BA006E77D3 /* PBXTargetDependency */,
 			);
@@ -1112,6 +1135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9A10711E4B11BA006E77D3 /* ViewModelsTests.swift in Sources */,
+				3C9A10AD1E4B3419006E77D3 /* ReactiveKitHelpers.swift in Sources */,
 				3C9A109A1E4B2F03006E77D3 /* RealmHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1213,6 +1237,11 @@
 			isa = PBXTargetDependency;
 			target = 3C9A10601E4B11BA006E77D3 /* ViewModels */;
 			targetProxy = 3C9A108E1E4B1295006E77D3 /* PBXContainerItemProxy */;
+		};
+		3C9A10A71E4B31D7006E77D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C37A7521E4A026300724DD0 /* UserInterface */;
+			targetProxy = 3C9A10A61E4B31D7006E77D3 /* PBXContainerItemProxy */;
 		};
 		3CF847C81E48D800006955F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
