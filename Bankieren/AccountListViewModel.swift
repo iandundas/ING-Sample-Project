@@ -11,6 +11,7 @@ import ReactiveKit
 import Bond
 import RealmSwift
 import Model
+import UserInterface
 
 public enum AccountListSection{
     case paymentAccounts
@@ -27,8 +28,8 @@ public enum AccountListSection{
 public protocol AccountListCoordinatorHandle{
     func section(index:Int) -> AccountListSection
     
-    func paymentCellData(index: Int) -> PaymentCellViewModel
-    func savingCellData(index: Int) -> SavingCellViewModel
+    func paymentCellData(index: Int) -> PaymentCellData
+    func savingCellData(index: Int) -> SavingCellData
 }
 
 public class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
@@ -122,31 +123,31 @@ public class AccountListViewModel: ListViewModelType, AccountListCoordinatorHand
         }
     }
     
-    public func paymentCellData(index: Int) -> PaymentCellViewModel{
+    public func paymentCellData(index: Int) -> PaymentCellData{
         return paymentAccounts[index].cellViewModel()
     }
     
-    public func savingCellData(index: Int) -> SavingCellViewModel{
+    public func savingCellData(index: Int) -> SavingCellData{
         return savingAccounts[index].cellViewModel()
     }
 }
 
 
 public extension PaymentAccount{
-    public func cellViewModel() -> PaymentCellViewModel{
+    public func cellViewModel() -> PaymentCellData{
         
         let formattedBalance = currency.formatted(amount: balance) ?? ""
-        let viewModel = PaymentCellViewModel(name: name, accountNumber: preferredAccountNumber, amount: formattedBalance)
+        let viewModel = PaymentCellData(name: name, accountNumber: preferredAccountNumber, amount: formattedBalance)
         return viewModel
     }
 }
 
 public extension SavingAccount {
-    public func cellViewModel() -> SavingCellViewModel{
+    public func cellViewModel() -> SavingCellData{
         
         let formattedBalance = currency.formatted(amount: balance) ?? ""
         let formattedTargetBalance = currency.formatted(amount: targetBalance) ?? ""
-        let viewModel = SavingCellViewModel(name: productName, accountNumber: preferredAccountNumber, balanceAmount: formattedBalance, targetAmount: formattedTargetBalance)
+        let viewModel = SavingCellData(name: productName, accountNumber: preferredAccountNumber, balanceAmount: formattedBalance, targetAmount: formattedTargetBalance)
         return viewModel
     }
 }

@@ -10,10 +10,17 @@ import UIKit
 
 // MARK: Payment Cell:
 
-public struct PaymentCellViewModel {
+public struct PaymentCellData {
     let name: String
     let accountNumber: String
     let amount: String // storing pre-formatted data, so String.
+    
+    // public memberwise initializer not available to other frameworks, so have to define one:
+    public init(name: String, accountNumber: String, amount: String){
+        self.name = name
+        self.accountNumber = accountNumber
+        self.amount = amount
+    }
 }
 
 public class PaymentCell: UITableViewCell {
@@ -35,7 +42,7 @@ public class PaymentCell: UITableViewCell {
         }
     }
     
-    public var viewModel: PaymentCellViewModel? {
+    public var viewModel: PaymentCellData? {
         didSet{
             guard let viewModel = viewModel else {return}
             accountName.text = viewModel.name
@@ -49,11 +56,19 @@ public class PaymentCell: UITableViewCell {
 
 // MARK: Savings Cell:
 
-public struct SavingCellViewModel {
+public struct SavingCellData {
     public let name: String
     public let accountNumber: String
     public let balanceAmount: String
     public let targetAmount: String
+    
+    // public memberwise initializer not available to other frameworks, so have to define one:
+    public init(name: String, accountNumber: String, balanceAmount: String, targetAmount: String){
+        self.name = name
+        self.accountNumber = accountNumber
+        self.balanceAmount = balanceAmount
+        self.targetAmount = targetAmount
+    }
 }
 
 public class SavingCell: UITableViewCell {
@@ -80,7 +95,7 @@ public class SavingCell: UITableViewCell {
         }
     }
     
-    public var viewModel: SavingCellViewModel? {
+    public var viewModel: SavingCellData? {
         didSet{
             guard let viewModel = viewModel else {return}
             accountName.text = viewModel.name

@@ -14,11 +14,6 @@ public protocol AccountsViewModelType{
     var title: String {get}
 }
 
-public class AccountsViewModel: AccountsViewModelType {
-    public let title = "Accounts"
-    
-    public init(actions: AccountsViewController.Actions){}
-}
 
 public class AccountsViewController: BaseBoundViewController<AccountsViewModelType>  {
     

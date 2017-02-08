@@ -12,6 +12,7 @@ import UserInterface
 import ReactiveKit
 import RealmSwift
 import Model
+import ViewModels
 
 class WidgetAccountsListViewModel: ListViewModelType, AccountListCoordinatorHandle{
     
@@ -53,11 +54,11 @@ class WidgetAccountsListViewModel: ListViewModelType, AccountListCoordinatorHand
         }
     }
     
-    public func paymentCellData(index: Int) -> PaymentCellViewModel{
+    public func paymentCellData(index: Int) -> PaymentCellData{
         return paymentAccounts[index].cellViewModel()
     }
     
-    public func savingCellData(index: Int) -> SavingCellViewModel{
+    public func savingCellData(index: Int) -> SavingCellData{
         return savingAccounts[index].cellViewModel()
     }
 }

@@ -11,6 +11,7 @@ import ReactiveKit
 import RealmSwift
 import Model
 import UserInterface
+import ViewModels
 
 class AccountsCoordinator: NSObject, Coordinator{
     
