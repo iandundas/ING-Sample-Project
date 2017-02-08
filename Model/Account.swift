@@ -19,6 +19,11 @@ public protocol AccountType{
     var visible: Bool {get}
     var iban: String {get}
 }
+// For use in diffing algorithm
+func ==(a: AccountType, b: AccountType) -> Bool {
+    return a.id == b.id
+}
+
 
 public class SavingAccount: Object, AccountType {
     
@@ -86,6 +91,7 @@ public class PaymentAccount: Object, AccountType {
     public dynamic var visible: Bool = false
     public dynamic var iban: String = ""
 }
+
 
 extension AccountType {
     public var balance: NSDecimalNumber{

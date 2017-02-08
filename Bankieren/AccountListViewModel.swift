@@ -11,6 +11,7 @@ import ReactiveKit
 import RealmSwift
 import Model
 import UserInterface
+import Diff
 
 
 // The interface that the Coordinator sees is different to the interface the ViewController sees:
@@ -33,36 +34,104 @@ public enum AccountListSection{
     }
 }
 
+// We consume [ListUpdate] events, map to these from the Diff from old->new Realm Results:
+extension Diff {
+    func toListUpdate() -> [ListUpdate] {
+        return elements.map { (diffElement) -> ListUpdate in
+            switch diffElement{
+                
+            case let .insert(at: index):
+                return .sectionChange(
+                    sectionIndex: 0,
+                    deletions: [],
+                    insertions: [index],
+                    modifications: [])
+                
+            case let .delete(at: index):
+                return .sectionChange(
+                    sectionIndex: 0,
+                    deletions: [index],
+                    insertions: [],
+                    modifications: [])
+            }
+        }
+    }
+}
+
 public class AccountListViewModel: ListViewModelType, AccountListCoordinatorHandle{
     
-    public var listDidUpdate: Signal<Void, NoError>{
-        return accountsUpdated.map {_ in }
+    // Public (immutable) signal indicating List updated
+    public var listDidUpdate: Signal<ListUpdate, NoError>{
+        return accountsUpdated.toSignal()
     }
     
-    fileprivate let accountsUpdated = SafePublishSubject<AccountListSection>()
+    // Private (mutable) PublishSubject allows events to be sent on itself - indicating Accounts Updated in this case
+    fileprivate let accountsUpdated = SafePublishSubject<ListUpdate>()
     
     fileprivate var paymentAccounts: Results<PaymentAccount> {
         didSet{
-            // TODO with more time it would be good to use the diff available in RealmCollectionChange<Results<PaymentAccount>>
-            // in order to provide CRUD notifications to the TableView:
-            paymentUpdatesToken = paymentAccounts.addNotificationBlock { [weak self] (_) in
-                self?.accountsUpdated.next(.paymentAccounts)
+
+            // We've set a new Result, create a diff with the old set and map it to ListUpdates
+            let diff: [ListUpdate] = oldValue.diff(paymentAccounts).toListUpdate()
+            
+            // pass those updates to accountsUpdated:
+            diff.forEach(self.accountsUpdated.next)
+
+            paymentUpdatesToken = paymentAccounts.addNotificationBlock { [weak self] (changes: RealmCollectionChange<Results<PaymentAccount>>) in
+                guard let strongSelf = self else {return}
+                
+                switch changes {
+                case .initial(_): break // not actually necessary
+                    
+                case let .update(_, deletions: deletedIndexes, insertions: insertedIndexes, modifications: updatedIndexes):
+                    strongSelf.accountsUpdated.next(.sectionChange(
+                        sectionIndex: 0,
+                        deletions: deletedIndexes,
+                        insertions: insertedIndexes,
+                        modifications: updatedIndexes))
+                    
+                case .error(let error):
+                    // just log it for now
+                    print("Error: \(error)")
+                }
             }
         }
     }
-    private var paymentUpdatesToken: NotificationToken? = nil
     
     
-    
+    // TODO reduce code duplication below:
     fileprivate var savingAccounts: Results<SavingAccount> {
         didSet{
-            // TODO with more time it would be good to use the diff available in RealmCollectionChange<Results<PaymentAccount>>
-            // in order to provide CRUD notifications to the TableView:
-            savingUpdatesToken = savingAccounts.addNotificationBlock { [weak self] (_) in
-                self?.accountsUpdated.next(.savingAccounts)
+            
+            // We've set a new Result, create a diff with the old set and map it to ListUpdates
+            let diff: [ListUpdate] = oldValue.diff(savingAccounts).toListUpdate()
+            
+            // pass those updates to accountsUpdated:
+            diff.forEach(self.accountsUpdated.next)
+            
+            savingUpdatesToken = savingAccounts.addNotificationBlock { [weak self] (changes: RealmCollectionChange<Results<SavingAccount>>) in
+                guard let strongSelf = self else {return}
+                
+                switch changes {
+                case .initial(_): break // not actually necessary
+                    
+                case let .update(_, deletions: deletedIndexes, insertions: insertedIndexes, modifications: updatedIndexes):
+                    strongSelf.accountsUpdated.next(.sectionChange(
+                        sectionIndex: 1,
+                        deletions: deletedIndexes,
+                        insertions: insertedIndexes,
+                        modifications: updatedIndexes))
+                    
+                case .error(let error):
+                    // just log it for now
+                    print("Error: \(error)")
+                }
             }
         }
     }
+    
+    // retain Realm notification tokens:
+    private var paymentUpdatesToken: NotificationToken? = nil
     private var savingUpdatesToken: NotificationToken? = nil
     
     private let bag = DisposeBag()
@@ -73,6 +142,8 @@ public class AccountListViewModel: ListViewModelType, AccountListCoordinatorHand
         // default values:
         paymentAccounts = realm.objects(PaymentAccount.self)
         savingAccounts = realm.objects(SavingAccount.self)
+        
+        
         
         // When actions.filterOnlyVisibleAccounts changes, update the Realm Result query for payment and savings:
         actions.filterOnlyVisibleAccounts

@@ -15,8 +15,8 @@ import ViewModels
 
 class WidgetAccountsListViewModel: ListViewModelType, AccountListCoordinatorHandle{
     
-    // we don't use realm auto-updating here, so "just" fire a Void event to update the screen once, then finish
-    public var listDidUpdate = SafeSignal<Void>.just()
+    // we don't use realm auto-updating here, so "just" fire an Initial event to update the screen once, then finish
+    public var listDidUpdate = SafeSignal<ListUpdate>.just(.initial)
     
     fileprivate var paymentAccounts: Results<PaymentAccount>
     fileprivate var savingAccounts: Results<SavingAccount>

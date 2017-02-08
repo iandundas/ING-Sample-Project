@@ -9,8 +9,13 @@
 import UIKit
 import ReactiveKit
 
+public enum ListUpdate{
+    case initial
+    case sectionChange(sectionIndex: Int, deletions: [Int], insertions: [Int], modifications: [Int])
+}
+
 public protocol ListViewModelType{
-    var listDidUpdate: SafeSignal<Void> {get}
+    var listDidUpdate: SafeSignal<ListUpdate> {get}
     
     func sectionCount() -> Int
     func itemCount(section index: Int) -> Int
@@ -35,12 +40,23 @@ public class ListViewController: BaseBoundViewController<ListViewModelType>, UIT
     override internal func bindTo(viewModel: ListViewModelType) {
      
         // bind(to: Deallocatable) removes need to [weak self] to access tableview
-        viewModel.listDidUpdate.bind(to: self.tableView) { (tableView: UITableView, _) in
-            // TODO: refactor to provide a Changeset diff from viewModel 
-            // in order to make fine-grained updates to the TableView.
+        viewModel.listDidUpdate.bind(to: self.tableView) { (tableView: UITableView, changes: ListUpdate) in
             
-            // For now, just reload data:
-            tableView.reloadData()
+            switch changes {
+            case .initial:
+                tableView.reloadData()
+                
+            case let .sectionChange(sectionIndex: sectionIndex, deletions: deletedIndexes, insertions: insertedIndexes, modifications: modifiedIndexes):
+                let deletedIndexPaths = deletedIndexes.map {IndexPath(row: $0, section: sectionIndex)}
+                let insertedIndexPaths = insertedIndexes.map {IndexPath(row: $0, section: sectionIndex)}
+                let modifiedIndexPaths = modifiedIndexes.map {IndexPath(row: $0, section: sectionIndex)}
+
+                tableView.beginUpdates()
+                tableView.deleteRows(at: deletedIndexPaths, with: .automatic)
+                tableView.insertRows(at: insertedIndexPaths, with: .automatic)
+                tableView.reloadRows(at: modifiedIndexPaths, with: .automatic)
+                tableView.endUpdates()
+            }
         }
     }
     
