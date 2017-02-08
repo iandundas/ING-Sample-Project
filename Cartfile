@@ -1,0 +1,10 @@
+github "realm/realm-cocoa" ~> 2.4
+
+# currently needs to fix a build warning, I have a pull request open here https://github.com/ReactiveKit/ReactiveKit/pull/145
+github "iandundas/ReactiveKit" "feature/extension-safe-api-flag" # "reactivekit/ReactiveKit" ~> 3.3
+
+# Same for this, I have a pull request open here: https://github.com/ReactiveKit/Bond/pull/381
+github "iandundas/Bond" "feature/extension-safe-api-flag" # "reactivekit/Bond"~> 6.0
+
+# Same for this
+github "iandundas/Diff.swift" "feature/extension-safe-api-flag" #"wokalski/Diff.swift"

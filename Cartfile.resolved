@@ -1,0 +1,7 @@
+github "wokalski/Diff.swift" "0.5.1"
+github "iandundas/Diff.swift" "b2ecaeec409ba9beba365940cbf46c51e5d4c37f"
+github "quick/Nimble" "v6.0.1"
+github "iandundas/ReactiveKit" "5aeb606c78492f41f30369019b624d8cb72abe6b"
+github "ReactiveKit/ReactiveKit" "v3.3.0"
+github "realm/realm-cocoa" "v2.4.2"
+github "iandundas/Bond" "61270371989c81addf888fda78c58fba66879c17"
